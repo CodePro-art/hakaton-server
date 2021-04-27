@@ -1,9 +1,9 @@
 const Site = require('../db/model/site');
 
-const addSite = async (value) => {
+const addSite = async (value, language) => {
   try {
-    console.log('add site');
     const site = new Site(value);
+    site.language = language;
     site.save();
     return site;
   } catch (e) {

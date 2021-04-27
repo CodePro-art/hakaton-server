@@ -11,10 +11,11 @@ const scraping = async (url) => {
     );
     const content = await page.$$eval(
       '.entry-content > p',
-      (content) => content.map((p) => (p.innerText)) //textContent - includes imgs
+      (content) => content.map((p) => p.innerText) //textContent - includes imgs
     );
     const post = { title, image, content };
     await browser.close();
+    console.log(post);
     return post;
   } catch (e) {
     return e;
