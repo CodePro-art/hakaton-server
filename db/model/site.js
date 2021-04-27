@@ -11,10 +11,15 @@ const siteShema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  content: [{
+  language: {
     type: String,
-    required: true,
-  }],
+  },
+  content: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 });
 const Site = mongoose.model('site', siteShema);
 module.exports = Site;
