@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const siteShema = new mongoose.Schema({
   url: {
     type: String,
-    required: true,
+  },
+  image: {
+    type: String,
   },
   title: {
     type: String,
