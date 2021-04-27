@@ -1,14 +1,14 @@
 require('./db/mongoDB');
 const express = require('express');
 const cors = require('cors');
-const router = require('./route/route');
-
+const route = require('./route/route');
 const app = express();
-
+const endpoint = require('./paths/path');
 // ! use's
+
 app.use(cors());
-app.use(router);
 app.use(express.json());
+app.use(route);
 
 const port = process.env.PORT || 3001;
 
