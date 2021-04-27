@@ -9,10 +9,9 @@ const port = process.env.PORT || 3001;
 
 app.post(`/url`, async (req, res) => {
   const { url } = req.body;
-  if (!url) return res.status(404).send('worng from the express');
-  // const urlString = scrapeFunc(url);
-  // console.log(urlString);
-  res.send('like from the expreess');
+  if (!url) return res.status(404).send('MUST PUT A URL');
+  const urlString = scrapeFunc(url);
+  res.send(urlString);
 });
 app.listen(port, () => {
   console.log(`we are live on ${port}`);
