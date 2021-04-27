@@ -2,11 +2,13 @@ const Site = require('../db/model/site');
 
 const addSite = async (value) => {
   try {
+    console.log('add site');
     const site = new Site(value);
     site.save();
-    res.send(site);
+    return site;
   } catch (e) {
-    res.status(400).send(e.message);
+    console.log(e);
+    return e.message;
   }
 };
 module.exports = { addSite };
