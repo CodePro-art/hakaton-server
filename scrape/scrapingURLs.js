@@ -11,11 +11,13 @@ const scrapingURLs = async () => {
     const images = await page.$$eval('#list-items > article > a > img', (el) => el.map(img => img.getAttribute('data-lazy-src')));
     const links = [];
     for (let i = 0; i < titles.length; i++){
-      links.push({
-        title: titles[i],
-        image: images[i],
-        url: URLs[i]
-      });
+      if (titles[i] && images[i] && URLs[i]){
+        links.push({
+          title: titles[i],
+          image: images[i],
+          url: URLs[i]
+        });
+      }
     }
     console.log(links)
     await browser.close();
@@ -24,5 +26,5 @@ const scrapingURLs = async () => {
     return e;
   }
 };
-
+scrapingURLs();
 module.exports = scrapingURLs;
