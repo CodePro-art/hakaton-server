@@ -12,8 +12,10 @@ app.post(`/url`, async (req, res) => {
   try {
     const { url } = req.body;
     if (!url) return res.status(404).send('MUST PUT A URL');
-    const urlString = scrapeFunc(url);
-    const response = addSite(JSON.parse(urlString));
+    const urlString = await scrapeFunc(url);
+    const response = await addSite(urlString);
+    console.log('check');
+    console.log(`our story${response}`);
     res.send(response);
   } catch (e) {
     res.status(400).send("didn't manage save");
