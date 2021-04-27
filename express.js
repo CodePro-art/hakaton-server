@@ -11,9 +11,13 @@ const port = process.env.PORT || 3001;
 app.post(`/url`, async (req, res) => {
   try {
     const { url } = req.body;
+    console.log('in express, got this url:')
+    console.log(url);
     if (!url) return res.status(404).send('MUST PUT A URL');
-    const urlString = scrapeFunc(url);
-    const response = addSite(JSON.parse(urlString));
+    const urlString = await scrapeFunc(url);
+    const response = await addSite(JSON.parse(urlString));
+    console.log('in express, this is the response');
+    console.log(response);
     res.send(response);
   } catch (e) {
     res.status(400).send("didn't manage save");

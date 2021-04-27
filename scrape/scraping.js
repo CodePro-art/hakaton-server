@@ -11,16 +11,12 @@ const scraping = async (url) => {
 			content.reduce((content, p) => content += (p.innerText), "") //textContent - includes imgs
 		);
 		const post = { title, image , content };
-		console.log(post);
 		await browser.close();
 		return post;
 	} catch(e) {
 		return e;
 	}
-
 }
-const url1 = 'https://www.adamtsair.co.il/%d7%90%d7%99%d7%96%d7%94-%d7%9c%d7%99%d7%9c%d7%94-%d7%9e%d7%a9%d7%95%d7%92%d7%a2/';
-const url2 = 'https://www.adamtsair.co.il/%d7%94%d7%90%d7%9c%d7%95%d7%a3/';
-scraping(url2);
+
 module.exports = scraping;
 
