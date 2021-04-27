@@ -1,6 +1,7 @@
 const express = require('express');
-const scrapeFunc = require('../scraping/scraping');
+const scrapeFunc = require('./scrape/scraping.js');
 const { addSite } = require('./utils/utils');
+require('./db/mongoDB');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
