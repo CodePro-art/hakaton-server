@@ -14,7 +14,9 @@ route.post(`/url`, async (req, res) => {
     res.status(400).send("didn't manage save");
   }
 });
+
 route.get('/', async (req, res) => {
+
   try {
     const arrOfUrl = await scarpingUrls();
     res.send(arrOfUrl);
