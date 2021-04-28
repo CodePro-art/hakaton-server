@@ -26,5 +26,5 @@ const scrapingURLs = async () => {
     return e;
   }
 };
-scrapingURLs();
+// scrapingURLs();
 module.exports = scrapingURLs;

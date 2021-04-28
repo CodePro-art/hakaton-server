@@ -20,7 +20,8 @@ const scraping = async (url) => {
     console.log(content)
     const post = { title, image, content };
     await browser.close();
-    console.log(post);
+    // console.log(post);
+    console.log('finish');
     return post;
   } catch (e) {
     console.log(e);
@@ -28,6 +29,6 @@ const scraping = async (url) => {
   }
 };
 
-scraping('https://www.adamtsair.co.il/%d7%90%d7%99%d7%96%d7%94-%d7%9c%d7%99%d7%9c%d7%94-%d7%9e%d7%a9%d7%95%d7%92%d7%a2/');
+// scraping('https://www.adamtsair.co.il/%d7%90%d7%99%d7%96%d7%94-%d7%9c%d7%99%d7%9c%d7%94-%d7%9e%d7%a9%d7%95%d7%92%d7%a2/');
 
 module.exports = scraping;
