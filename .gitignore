@@ -2,3 +2,7 @@
   region: 'us-east-2',
   accessKeyId: 'AKIA42TLSNMR6BGXLFO2',
   secretAccessKey: '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',
+
+
+
+  const path = 'mongodb://myUserAdmin:abc789@18.197.28.167:27017'; for mongoos conect
