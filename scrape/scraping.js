@@ -20,8 +20,7 @@ const scraping = async (url) => {
     console.log(content)
     const post = { title, image, content };
     await browser.close();
-    // console.log(post);
-    console.log('finish');
+
     return post;
   } catch (e) {
     console.log(e);
