@@ -5,6 +5,7 @@ const { addSite } = require('../utils/utils');
 const scrapeFunc = require('../scrape/scraping.js');
 route.post(`/url`, async (req, res) => {
   try {
+    console.log('from back');
     const { url, language } = req.body;
     if (!url) return res.status(404).send('MUST PUT A URL');
     const urlString = await scrapeFunc(url);
@@ -17,7 +18,6 @@ route.post(`/url`, async (req, res) => {
 });
 
 route.get('/', async (req, res) => {
-
   try {
     const arrOfUrl = await scarpingUrls();
     res.send(arrOfUrl);

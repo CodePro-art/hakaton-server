@@ -1,6 +1,9 @@
 const AWS = require('aws-sdk');
+
 AWS.config.update({
-  // !add config
+  region: 'us-east-2',
+  accessKeyId: process.env.KEY,
+  secretAccessKey: process.env.SKEY,
 });
 const translate = new AWS.Translate();
 const translateText = async (originalText, targetLanguageCode) => {
