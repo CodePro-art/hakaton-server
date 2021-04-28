@@ -5,11 +5,11 @@ const siteShema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
   },
   title: {
     type: String,
-    required: true,
+    // required: true,
   },
   language: {
     type: String,
@@ -17,7 +17,7 @@ const siteShema = new mongoose.Schema({
   content: [
     {
       type: String,
-      required: true,
+      // required: true,
     },
   ],
 });
