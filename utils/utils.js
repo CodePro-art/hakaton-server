@@ -1,9 +1,10 @@
 const Site = require('../db/model/site');
+const translate = require('../translate/translate');
 
 const addSite = async (value, language) => {
   try {
     const site = new Site(value);
-    site.language = language;
+    const translateSite = await translate(site, language);
     site.save();
     return site;
   } catch (e) {

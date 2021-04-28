@@ -15,7 +15,6 @@ const scraping = async (url) => {
     );
     const post = { title, image, content };
     await browser.close();
-    console.log(post);
     return post;
   } catch (e) {
     return e;
